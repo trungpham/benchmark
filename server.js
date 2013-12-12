@@ -1,0 +1,22 @@
+var express = require('express');
+var http = require('http');
+var app = express();
+app.listen(process.env.PORT || 3000);
+
+
+app.get('/', function(request, response) {
+
+    var count = 0;
+    var doneCB = function(res){
+        count++;
+        if (count == 3){
+            response.send("okay");
+        }
+    };
+
+
+    http.get({hostname:'localhost', port:3001, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+    http.get({hostname:'localhost', port:3002, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+    http.get({hostname:'localhost', port:3003, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+
+});
