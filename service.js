@@ -8,7 +8,7 @@ app.get('/', function(request, response) {
     var sleepTime = Math.floor(Math.random()*100)+100;
     setTimeout(function(){
         console.log(sleepTime);
-        response.send(sleepTime);
+        response.send(200,"okay");
         console.log("done");
     }, sleepTime);
 

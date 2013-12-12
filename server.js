@@ -5,12 +5,12 @@ app.listen(process.env.PORT || 3000);
 
 
 app.get('/', function(request, response) {
-
+    console.log('.');
     var count = 0;
     var doneCB = function(res){
         count++;
         if (count == 3){
-            response.send("okay");
+            response.send(200,"okay");
         }
     };
 
