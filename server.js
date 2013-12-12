@@ -15,8 +15,8 @@ app.get('/', function(request, response) {
     };
 
 
-    http.get({hostname:'localhost', port:3001, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
-    http.get({hostname:'localhost', port:3002, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
-    http.get({hostname:'localhost', port:3003, path:'/'}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+    http.get({hostname:'localhost', port:3001, path:'/', agent:false}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+    http.get({hostname:'localhost', port:3002, path:'/', agent:false}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
+    http.get({hostname:'localhost', port:3003, path:'/', agent:false}, doneCB).on("error", function(e){console.error(e); response.send(500, "error");});
 
 });
