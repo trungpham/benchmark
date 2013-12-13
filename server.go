@@ -18,16 +18,20 @@ func asyncHttpGets(urls []string) []*HttpResponse {
   responses := []*HttpResponse{}
   for _, url := range urls {
       go func(url string) {
-          fmt.Printf("Fetching %s \n", url)
+          //fmt.Printf("Fetching %s \n", url)
           resp, err := http.Get(url)
           ch <- &HttpResponse{url, resp, err}
+          defer resp.Body.Close()
       }(url)
   }
 
   for {
       select {
       case r := <-ch:
-          fmt.Printf("%s was fetched\n", r.url)
+          //fmt.Printf("%s was fetched\n", r.url)
+          if r.err != nil {
+            fmt.Printf("Error: %s\n", r.err)
+          }
           responses = append(responses, r)
           if len(responses) == len(urls) {
               return responses
