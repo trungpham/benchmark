@@ -48,7 +48,10 @@ public class Application extends Controller {
         Promise<Result> combined = resultList.map(
                 new Function<java.util.List<WS.Response>, Result>() {
                     public Result apply(java.util.List<WS.Response> responses) {
-                        return ok(responses.get(0).getBody() + responses.get(1).getBody() + responses.get(2).getBody());
+                        responses.get(0).getBody();
+                        responses.get(1).getBody();
+                        responses.get(2).getBody();
+                        return ok("okay");
                     }
                 }
 
