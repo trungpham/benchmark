@@ -15,5 +15,5 @@ Result:
 Sending 9000 requests directly to the service: 60.6s
 Sending 9000 requests through the proxy:
 NodeJS: +8s
-Go: +0s
+Go: +30s
 Java+Play2: +0s
