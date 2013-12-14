@@ -20,3 +20,4 @@ NodeJS: +8s
 Go: +30s
 Java+Play2: +0s
 Java+Rhino+Vertx: 0s
+Java+Jruby+Vertx: 0.5s
