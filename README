@@ -19,3 +19,4 @@ Sending 9000 requests through the proxy:
 NodeJS: +8s
 Go: +30s
 Java+Play2: +0s
+Java+Rhino+Vertx: 0s
