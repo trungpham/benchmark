@@ -5,7 +5,7 @@ app.listen(process.env.PORT || 3000);
 
 app.get('/', function(request, response) {
     console.log("start");
-    var sleepTime = Math.floor(Math.random()*100)+100;
+    var sleepTime = 200;
     setTimeout(function(){
         console.log(sleepTime);
         response.send(200,"okay");

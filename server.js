@@ -5,7 +5,6 @@ app.listen(process.env.PORT || 3000);
 
 
 app.get('/', function(request, response) {
-    console.log('.');
     var count = 0;
     var doneCB = function(res){
         count++;

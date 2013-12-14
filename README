@@ -7,6 +7,13 @@ PORT=3001 node service.js
 PORT=3002 node service.js
 PORT=3003 node service.js
 3. run apache benchmark tool
-ab  -n 10000 -c 50 "http://localhost:3000/"
+ab  -n 9000 -c 30 "http://localhost:3000/"
 
-This file was modified by IntelliJ IDEA 12.1.4 for binding GitHub repository
+
+Result:
+
+Sending 9000 requests directly to the service: 60.6s
+Sending 9000 requests through the proxy:
+NodeJS: +8s
+Go: +0s
+Java+Play2: +0s
