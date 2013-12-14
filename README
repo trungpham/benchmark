@@ -10,8 +10,10 @@ PORT=3003 node service.js
 ab  -n 9000 -c 30 "http://localhost:3000/"
 
 
-Result:
+Benchmark scenario:
+Browser will issue a request to the proxy server. Internally, proxy server will make 3 out bound http calls to 3 different remote services in parallel. Only after those three requests completed, then proxy server can response back to the browser.
 
+Result:
 Sending 9000 requests directly to the service: 60.6s
 Sending 9000 requests through the proxy:
 NodeJS: +8s
